@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 .content {
+=======
+.container {
+>>>>>>> e69e95bcad6174d070b18bedd07c0c463ceff5c2
     display: flex;
 }
 
 img {
     width: 350px;
+<<<<<<< HEAD
 }
 
 button {
@@ -15,4 +20,6 @@ button {
 button:hover {
     background-color: #999999;
     transition: .7s;
+=======
+>>>>>>> e69e95bcad6174d070b18bedd07c0c463ceff5c2
 }
