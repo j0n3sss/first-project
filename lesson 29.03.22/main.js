@@ -1,5 +1,4 @@
 let images = document.querySelectorAll('.carousel-item');
-<<<<<<< HEAD
 let i;
 
 for (i = 1; i < 5; i++) {
@@ -37,7 +36,3 @@ btnRight.addEventListener("click", () => {
         imgShow(i)
     }
 })
-=======
-console.log(images);
-images[0].style.display = "none"; //убирает первую картинку
->>>>>>> e69e95bcad6174d070b18bedd07c0c463ceff5c2
