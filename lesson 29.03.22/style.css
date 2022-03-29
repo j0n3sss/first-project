@@ -1,0 +1,18 @@
+.content {
+    display: flex;
+}
+
+img {
+    width: 350px;
+}
+
+button {
+    border-radius: 0;
+    border: none;
+    transition: .7s;
+}
+
+button:hover {
+    background-color: #999999;
+    transition: .7s;
+}
