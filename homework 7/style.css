@@ -1,0 +1,69 @@
+.content {
+    display: flex;
+
+}
+
+.container {
+    width: 406px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    background-color: #778899;
+    padding: 5px;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: #000;
+    transition: .7s;
+}
+
+.top-nav a:hover {
+    color: #fff;
+    transition: .7s;
+}
+
+img {
+    width: 350px;
+}
+
+button {
+    border-radius: 0;
+    border: none;
+    transition: .7s;
+    background-color: #778899;
+}
+
+button:hover {
+    background-color: #999999;
+    transition: .7s;
+}
+
+.bottom-nav {
+    display: flex;
+    overflow: auto;
+}
+
+.bottom-nav img {
+    width: 90px;
+}
+
+.line {
+    width: 100%;
+    height: 28px;
+    background-color: #778899;
+}
+
+.slide-choose {
+    cursor: pointer;
+    filter: blur(.95px);
+    transition: .7s;
+}
+
+.slide-choose:hover {
+    filter: blur(0);
+    transition: .7s;
+}
