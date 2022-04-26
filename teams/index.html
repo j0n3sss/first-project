@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #groups_list {
+            display: flex;
+        }
+
+        .group-name, .group {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="group_generate(); show();">generate_group</button>
+    <div id="btns">
+
+    </div>
+    <button onclick="show();">Показать группы</button>
+    <div id="groups_list">
+        <div class="group">
+            <p type="square">Группа 1</p>
+            <ul>
+                <li>Amanda Murphy</li>
+                <li>Ernesto Walton</li>
+                <li>....</li>
+            </ul>
+        </div>
+        <div class="group">
+            <p>Группа 2</p>
+            <ul type="square">
+                <li>Amanda Murphy</li>
+                <li>Ernesto Walton</li>
+                <li>....</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        let members = [
+        'Amanda Murphy',
+        'Ernesto Walton', 
+        'Antoinette Thornton',
+        'Otis Lloyd', 
+        'Dana Haynes', 
+        'Lester Myers',
+        'Emily Graham', 
+        'Amos Mcbride', 
+        'Bryan Berry',
+        'Carlton Barnes', 
+        'Ken Floyd',
+        'Shannon Johnston',
+        'Louis Mccormick', 
+        'Leon Leonard'
+        ];
+
+        let groups = {
+            'Группа 1': [],
+            'Группа 2': []
+            // group3: []
+        };
+
+        function group_generate() {
+            let count_group = Object.keys(groups).length;
+            let div = members.length % count_group;
+            if (div != 0) {
+                console.log("Не хватает участников:", count_group - div);
+                return;
+            }
+            let count_in_group = members.length / count_group;
+            console.log("Количество в группе:", count_in_group);
+            for (let i = 0; i < count_in_group; i++) {
+                for (const [key, value] of Object.entries(groups)) {
+                add_to_group(groups[key]);
+                }
+            }
+        }
+
+        function add_to_group(group) {
+            let indx = getRandomInt(members.length - 1);
+            group.push(members[indx]);
+            members.splice(indx, 1);
+        }
+
+        function create_btn(key, group) {
+            const button = document.createElement("button");
+            button.innerText = `Добавить в ${key}`;
+            button.id = `mainButton-${key}`;
+            button.addEventListener("click", () => {
+                add_to_group(group);
+                show();
+            });
+            return button;
+        }
+
+        for (const [key, value] of Object.entries(groups)) {
+            document.body.appendChild(create_btn(key, value));
+        }
+
+        function show() {
+            const groups_list = document.getElementById('groups_list');
+            groups_list.innerHTML = '';
+            for (const [key, group] of Object.entries(groups)) {
+                let block = document.createElement('div');
+                block.classList.add('group');
+                block.innerHTML = `<p class='group-name'>${key}</p>`;
+                let ul = document.createElement('ul');
+                ul.classList.add('group-list');
+                for (let i = 0; i < group.length; i++) {
+                    let li = document.createElement('li');
+                    li.innerText = group[i];  
+                     ul.appendChild(li);
+                }
+                block.appendChild(ul);
+                groups_list.appendChild(block);
+            }
+        }
+    </script>
+</body>
+</html>
