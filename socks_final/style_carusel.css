@@ -1,0 +1,21 @@
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    height: 550px;
+}
+
+img {
+    width: 550px;
+}
+
+button {
+    border-radius: 0;
+    border: none;
+    transition: .7s;
+}
+
+button:hover {
+    background-color: #999999;
+    transition: .7s;
+}
